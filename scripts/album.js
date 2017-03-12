@@ -20,7 +20,7 @@
      artist: 'Guglielmo Marconi',
      label: 'EM',
      year: '1909',
-     albumArtUrl: 'assets/images/album_covers/20.png',
+     albumArtUrl: 'assets/images/album_covers/02.png',
      songs: [
          { title: 'Hello, Operator?', duration: '1:01' },
          { title: 'Ring, ring, ring', duration: '5:01' },
@@ -29,6 +29,24 @@
          { title: 'Wrong phone number', duration: '2:15'}
      ]
  };
+
+ // Another Example Album
+ var albumEdison = {
+     title: 'Lightbulb',
+     artist: 'Thomas Edison',
+     label: 'GE',
+     year: '1979',
+     albumArtUrl: 'assets/images/album_covers/03.png',
+     songs: [
+         { title: 'Get Lit', duration: '1:01' },
+         { title: 'Filament', duration: '3:05' },
+         { title: 'Phon yo graph', duration: '2:23'},
+         { title: 'Pictures in motion', duration: '5:34' },
+         { title: 'Magnets', duration: '8:23'}
+     ]
+ };
+
+
 
 
  var createSongRow = function(songNumber, songName, songLength) {
@@ -70,3 +88,11 @@
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
  };
+
+function albumToggle() {
+    this.toggle(albumEdison);
+    this.toggle(albumMarconi);
+    this.toggle(albumPicasso);
+}
+
+document.getElementsByClassName('album-cover-art').addEventListener('click', albumToggle);
